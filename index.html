@@ -158,10 +158,7 @@
     <p>All website src leaked by 512</p>
   </header>
 
-  <audio id="background-music" loop autoplay>
-    <source src="https://cdn.discordapp.com/attachments/1332372537786761278/1370958909258465331/floki__lost_soul_remix_PMEAN.mp3" type="audio/mp3">
-    Votre navigateur ne supporte pas la balise audio.
-  </audio>
+  <audio id="background-music" loop autoplay></audio>
 
   <div class="audio-player">
     <button id="playPauseBtn">▶</button>
@@ -173,7 +170,6 @@
   <div class="top-right-box">?</div>
 
   <main class="grid">
-    <!-- Carte 1 -->
     <div class="card">
       <img src="https://i.pinimg.com/736x/59/7f/11/597f11b631d7d94492f1adb95110cc44.jpg" alt="Google" />
       <div class="project-title">Google</div>
@@ -181,7 +177,6 @@
       <a href="https://cdn.discordapp.com/attachments/1332372537786761278/1370965874835722291/sd.html" class="download">📥 Télécharger</a>
     </div>
 
-    <!-- Carte 2 -->
     <div class="card">
       <img src="https://i.pinimg.com/736x/14/e5/84/14e584760464db3248dd7c57e15d577a.jpg" alt="Clone Youtube" />
       <div class="project-title">Clone Youtube</div>
@@ -189,15 +184,13 @@
       <a href="https://cdn.discordapp.com/attachments/1332372537786761278/1370965905852465263/Youtube-Clone-main.zip" class="download">📥 Télécharger</a>
     </div>
 
-    <!-- Carte 3 -->
     <div class="card">
-      <img src="https://i.pinimg.com/736x/c6/2a/a0/c62aa01b94dd75d326abd8ee2fe4867a.jpg" alt="DISCORD ACCEUILLE" />
+      <img src="https://i.pinimg.com/736x/c6/2a/a0/c62aa01b94dd75d326abd8ee2fe4867a.jpg" alt="Discord 1" />
       <div class="project-title">Discord 1</div>
       <div class="desc">DISCORD ACCEUILLE</div>
       <a href="https://cdn.discordapp.com/attachments/1332372537786761278/1371115499349610516/acceuil_discord.rar" class="download">📥 Télécharger</a>
     </div>
 
-    <!-- Carte 4 -->
     <div class="card">
       <img src="https://i.pinimg.com/736x/c6/2a/a0/c62aa01b94dd75d326abd8ee2fe4867a.jpg" alt="Discord 2" />
       <div class="project-title">Discord 2</div>
@@ -205,12 +198,11 @@
       <a href="https://cdn.discordapp.com/attachments/1332372537786761278/1371118578518065173/main_discord.rar" class="download">📥 Télécharger</a>
     </div>
 
-    <!-- Carte 5 -->
     <div class="card">
       <img src="https://ph-files.imgix.net/e0b67080-ce61-41ef-aa42-e0724fda0266.png?auto=compress&codec=mozjpeg&cs=strip&auto=format&w=64&h=64&fit=crop&frame=1&dpr=1" alt="Pornhub" />
       <div class="project-title">Pornhub</div>
       <div class="desc">Pornhub src</div>
-      <a href="https://cdn.discordapp.com/attachments/1332372537786761278/1371123558033526834/pornhub-src-by512.rar?ex=6821fdd2&is=6820ac52&hm=0e9d50553f28b4a6d563e231e7b422e6a81126add40df07581608458c1c45223&" class="download">📥 Télécharger</a>
+      <a href="https://cdn.discordapp.com/attachments/1332372537786761278/1371123558033526834/pornhub-src-by512.rar" class="download">📥 Télécharger</a>
     </div>
   </main>
 
@@ -219,8 +211,23 @@
   <script>
     const playPauseBtn = document.getElementById("playPauseBtn");
     const reloadBtn = document.getElementById("reloadBtn");
+    const changeSongBtn = document.getElementById("changeSongBtn");
     const volumeControl = document.getElementById("volumeControl");
     const audio = document.getElementById("background-music");
+
+    const songs = [
+      "https://cdn.discordapp.com/attachments/1332372537786761278/1370958909258465331/floki__lost_soul_remix_PMEAN.mp3",
+      "https://cdn.discordapp.com/attachments/1332372537786761278/1371192345172011018/binks.mp3",
+      "https://cdn.discordapp.com/attachments/1332372537786761278/1371192743009452032/matrix_theme.mp3"
+    ];
+    let currentSongIndex = 0;
+
+    function playCurrentSong() {
+      audio.src = songs[currentSongIndex];
+      audio.load();
+      audio.play();
+      playPauseBtn.textContent = "❚❚";
+    }
 
     playPauseBtn.addEventListener("click", () => {
       if (audio.paused) {
@@ -232,19 +239,24 @@
       }
     });
 
-    volumeControl.addEventListener("input", () => {
-      audio.volume = volumeControl.value / 100;
-    });
-
-    audio.volume = volumeControl.value / 100;
-
     reloadBtn.addEventListener("click", () => {
       audio.load();
       audio.play();
       playPauseBtn.textContent = "❚❚";
     });
 
-    // Désactivation DevTools
+    changeSongBtn.addEventListener("click", () => {
+      currentSongIndex = (currentSongIndex + 1) % songs.length;
+      playCurrentSong();
+    });
+
+    volumeControl.addEventListener("input", () => {
+      audio.volume = volumeControl.value / 100;
+    });
+
+    audio.volume = volumeControl.value / 100;
+    playCurrentSong();
+
     document.addEventListener("contextmenu", event => event.preventDefault());
     document.addEventListener("keydown", event => {
       if (
