@@ -8,35 +8,35 @@
   <style>
     body {
       margin: 0;
-      background: #000000; /* Fond noir */
-      color: #ffffff; /* Texte blanc éclatant */
+      background: #000000;
+      color: #ffffff;
       font-family: 'Courier New', monospace;
     }
 
     header {
       text-align: center;
       padding: 2rem 1rem 1rem;
-      border-bottom: 1px solid #ffffff; /* Bordure blanche */
+      border-bottom: 1px solid #ffffff;
     }
 
     h1 {
       font-size: 2.8rem;
-      text-shadow: 0 0 10px #ffffff; /* Ombre du texte en blanc */
+      text-shadow: 0 0 10px #ffffff;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Utilisation de cartes carrées */
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       gap: 2rem;
       padding: 2rem;
     }
 
     .card {
-      background: #000000; /* Fond des cartes noir */
-      border: 1px solid #ffffff; /* Bordure blanche pour les cartes */
+      background: #000000;
+      border: 1px solid #ffffff;
       padding: 1rem;
       border-radius: 8px;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Ombre blanche */
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
       transition: transform 0.2s ease;
       display: flex;
       flex-direction: column;
@@ -47,30 +47,28 @@
 
     .card:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.7); /* Ombre plus forte lors du survol */
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
     }
 
     .project-title {
       font-size: 1.4rem;
-      color: #ffffff; /* Texte des titres en blanc */
       margin-bottom: 0.5rem;
     }
 
     .desc {
       font-size: 0.9rem;
-      color: #ffffff; /* Texte des descriptions en blanc */
       margin-bottom: 1rem;
     }
 
     .download {
       text-decoration: none;
-      color: #ffffff; /* Texte du lien en blanc */
+      color: #ffffff;
       font-weight: bold;
     }
 
     .download:hover {
       text-decoration: underline;
-      color: #cccccc; /* Lien avec soulignement et couleur grise clair au survol */
+      color: #cccccc;
     }
 
     .card img {
@@ -80,18 +78,17 @@
       margin-bottom: 1rem;
     }
 
-    /* Repositionner le lecteur audio tout en haut */
     .audio-player {
-      position: fixed; /* Fixer en haut */
+      position: fixed;
       top: 0;
-      right: 0; /* Place le lecteur audio dans le coin supérieur droit */
-      background-color: #333; /* Fond sombre pour le lecteur */
+      right: 0;
+      background-color: #333;
       padding: 10px;
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 10px;
-      z-index: 1000; /* S'assurer que c'est au-dessus des autres éléments */
+      z-index: 1000;
     }
 
     .audio-player button {
@@ -113,7 +110,6 @@
       margin-top: 10px;
     }
 
-    /* Ajout d'un carré en haut à droite */
     .top-right-box {
       position: fixed;
       top: 10px;
@@ -125,34 +121,48 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      color: #fff;
       font-size: 1.2rem;
       border-radius: 5px;
-      z-index: 1001; /* Plus élevé que le lecteur audio */
+      z-index: 1001;
       cursor: pointer;
     }
 
-    /* Espacement du contenu principal pour éviter qu'il passe sous le lecteur audio */
     main {
-      padding-top: 80px; /* Plus d'espace pour ne pas que le contenu passe sous le carré */
+      padding-top: 80px;
     }
 
+    .discord-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #5865F2;
+      color: white;
+      padding: 12px 16px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(88, 101, 242, 0.7);
+      z-index: 1002;
+      transition: background-color 0.3s ease;
+    }
+
+    .discord-button:hover {
+      background-color: #4752C4;
+    }
   </style>
 </head>
 <body>
 
   <header>
     <h1>WEBSITE LEAK BY 512</h1>
-    <p>ALL WEBSITE LEAKED BY 512</p>
+    <p>Source code ici</p>
   </header>
 
-  <!-- LECTEUR AUDIO AUTO -->
   <audio id="background-music" loop autoplay>
     <source src="https://cdn.discordapp.com/attachments/1332372537786761278/1370958909258465331/floki__lost_soul_remix_PMEAN.mp3?ex=6821647b&is=682012fb&hm=4575bbfec2ba37ca7541c64511663989eb6ad4dfc2a9ea3268a05d8da37e040d&" type="audio/mp3">
     Votre navigateur ne supporte pas la balise audio.
   </audio>
 
-  <!-- Contrôles du lecteur audio -->
   <div class="audio-player">
     <button id="playPauseBtn">▶</button>
     <button id="reloadBtn">🔄</button>
@@ -160,39 +170,43 @@
     <input type="range" id="volumeControl" value="100" max="100" />
   </div>
 
-  <!-- Petit carré en haut à droite -->
-  <div class="top-right-box">
-    ?
-  </div>
+  <div class="top-right-box">?</div>
 
   <main class="grid">
-    <!-- Carte 1 : Google -->
+    <!-- Carte 1 -->
     <div class="card">
       <img src="https://i.pinimg.com/736x/59/7f/11/597f11b631d7d94492f1adb95110cc44.jpg" alt="Google" />
       <div class="project-title">Google</div>
       <div class="desc">Juste code source google</div>
-      <!-- Lien de téléchargement vers un fichier depuis un service -->
-      <a href="https://cdn.discordapp.com/attachments/1332372537786761278/1370965874835722291/sd.html?ex=68216af7&is=68201977&hm=2460e1717ed0bd7fbabedcdcc69be0000e51b512fa9c39b3183d9ff3875efea4&" class="download">📥 Télécharger</a>
+      <a href="https://cdn.discordapp.com/attachments/1332372537786761278/1370965874835722291/sd.html" class="download">📥 Télécharger</a>
     </div>
 
-    <!-- Carte 2 : Clone Youtube -->
+    <!-- Carte 2 -->
     <div class="card">
       <img src="https://i.pinimg.com/736x/14/e5/84/14e584760464db3248dd7c57e15d577a.jpg" alt="Clone Youtube" />
       <div class="project-title">Clone Youtube</div>
       <div class="desc">raison : car jme fais chier wala</div>
-      <!-- Lien vers un fichier de téléchargement -->
-      <a href="https://cdn.discordapp.com/attachments/1332372537786761278/1370965905852465263/Youtube-Clone-main.zip?ex=68216aff&is=6820197f&hm=59fe3a362c47fbdb7ac0312616dafcbfa2bd849a2273656c2c57e24995f9aef6&" class="download">📥 Télécharger</a>
+      <a href="https://cdn.discordapp.com/attachments/1332372537786761278/1370965905852465263/Youtube-Clone-main.zip" class="download">📥 Télécharger</a>
     </div>
 
-    <!-- Carte 3 : DISCORD ACCEUILLE -->
+    <!-- Carte 3 -->
     <div class="card">
-      <img src="https://i.pinimg.com/736x/c6/2a/a0/c62aa01b94dd75d326abd8ee2fe4867a.jpg" alt="DISCORD ACCEUILLE" />
+      <img src="https://i.pinimg.com/736x/27/ea/fc/27eafc8b95576c7a489d5f145ab8882c.jpg" alt="DISCORD ACCEUILLE" />
       <div class="project-title">Discord 1</div>
       <div class="desc">DISCORD ACCEUILLE</div>
-      <a href="https://cdn.discordapp.com/attachments/1332372537786761278/1371115499349610516/acceuil_discord.rar?ex=6821f651&is=6820a4d1&hm=16cab58149067345eef0638bd4761e507f01db31530ab8ae640be0e3d6bf6fea&" class="download">📥 Télécharger</a>
+      <a href="https://cdn.discordapp.com/attachments/1332372537786761278/1371115499349610516/acceuil_discord.rar" class="download">📥 Télécharger</a>
     </div>
 
+    <!-- Carte 4 -->
+    <div class="card">
+      <img src="https://i.pinimg.com/736x/27/ea/fc/27eafc8b95576c7a489d5f145ab8882c.jpg" alt="Discord 2" />
+      <div class="project-title">Discord 2</div>
+      <div class="desc">Discord main pages</div>
+      <a href="https://cdn.discordapp.com/attachments/1332372537786761278/1371118578518065173/main_discord.rar?ex=6821f92f&is=6820a7af&hm=5a24b28f898c6dd834489e9cc697e14a0d07c1bcbb634afb7e53a334607cf18d&" class="download">📥 Télécharger</a>
+    </div>
   </main>
+
+  <a href="https://discord.gg/wJysWgtaXZ" target="_blank" class="discord-button">Join discord server</a>
 
   <script>
     const playPauseBtn = document.getElementById("playPauseBtn");
@@ -203,10 +217,10 @@
     playPauseBtn.addEventListener("click", () => {
       if (audio.paused) {
         audio.play();
-        playPauseBtn.textContent = "❚❚"; // Pause
+        playPauseBtn.textContent = "❚❚";
       } else {
         audio.pause();
-        playPauseBtn.textContent = "▶"; // Play
+        playPauseBtn.textContent = "▶";
       }
     });
 
@@ -217,35 +231,26 @@
     audio.volume = volumeControl.value / 100;
 
     reloadBtn.addEventListener("click", () => {
-      audio.load(); // Recharger la musique
+      audio.load();
       audio.play();
-      playPauseBtn.textContent = "❚❚"; // Pause
+      playPauseBtn.textContent = "❚❚";
     });
 
-    // Désactiver le clic droit
+    // Désactivation DevTools
     document.addEventListener("contextmenu", event => event.preventDefault());
-
-    // Désactiver F12, Ctrl+Shift+I, Ctrl+U
     document.addEventListener("keydown", event => {
-      if (event.key === "F12") {
-        event.preventDefault();
-      }
-
-      if ((event.ctrlKey && event.shiftKey && (event.key === "I" || event.key === "J")) || 
-          (event.ctrlKey && event.key === "U")) {
+      if (
+        event.key === "F12" ||
+        (event.ctrlKey && event.shiftKey && (event.key === "I" || event.key === "J")) ||
+        (event.ctrlKey && event.key === "U")
+      ) {
         event.preventDefault();
       }
     });
-
-    // Désactiver l'ouverture des DevTools via la souris
-    window.onkeydown = (e) => {
-      if (e.keyCode === 123) { // F12
-        e.preventDefault();
-      }
+    window.onkeydown = e => {
+      if (e.keyCode === 123) e.preventDefault();
     };
-
-    // Désactiver l'inspection via la souris
-    window.addEventListener('mousedown', function(event) {
+    window.addEventListener("mousedown", function(event) {
       if (event.button === 2) {
         event.preventDefault();
       }
