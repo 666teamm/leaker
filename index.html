@@ -8,20 +8,20 @@
   <style>
     body {
       margin: 0;
-      background: #000;
-      color: #fff;
+      background: #000000;
+      color: #ffffff;
       font-family: 'Courier New', monospace;
     }
 
     header {
       text-align: center;
       padding: 2rem 1rem 1rem;
-      border-bottom: 1px solid #fff;
+      border-bottom: 1px solid #ffffff;
     }
 
     h1 {
       font-size: 2.8rem;
-      text-shadow: 0 0 10px #fff;
+      text-shadow: 0 0 10px #ffffff;
     }
 
     .grid {
@@ -32,8 +32,8 @@
     }
 
     .card {
-      background: #000;
-      border: 1px solid #fff;
+      background: #000000;
+      border: 1px solid #ffffff;
       padding: 1rem;
       border-radius: 8px;
       box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
@@ -62,13 +62,13 @@
 
     .download {
       text-decoration: none;
-      color: #fff;
+      color: #ffffff;
       font-weight: bold;
     }
 
     .download:hover {
       text-decoration: underline;
-      color: #ccc;
+      color: #cccccc;
     }
 
     .card img {
@@ -158,21 +158,22 @@
     <p>All website src leaked by 512</p>
   </header>
 
-  <audio id="background-music" loop>
-    <source src="https://cdn.discordapp.com/attachments/1332372537786761278/1370958909258465331/floki__lost_soul_remix_PMEAN.mp3" type="audio/mp3">
+  <audio id="background-music" loop autoplay>
+    <source src="https://cdn.discordapp.com/attachments/1332372537786761278/1370958909258465331/floki__lost_soul_remix_PMEAN.mp3?ex=6821647b&is=682012fb&hm=4575bbfec2ba37ca7541c64511663989eb6ad4dfc2a9ea3268a05d8da37e040d&" type="audio/mp3">
     Votre navigateur ne supporte pas la balise audio.
   </audio>
 
   <div class="audio-player">
     <button id="playPauseBtn">▶</button>
     <button id="reloadBtn">🔄</button>
+    <button id="changeSongBtn">🎵</button>
     <input type="range" id="volumeControl" value="100" max="100" />
   </div>
 
   <div class="top-right-box">?</div>
 
   <main class="grid">
-    <!-- Cartes -->
+    <!-- Carte 1 -->
     <div class="card">
       <img src="https://i.pinimg.com/736x/59/7f/11/597f11b631d7d94492f1adb95110cc44.jpg" alt="Google" />
       <div class="project-title">Google</div>
@@ -180,6 +181,7 @@
       <a href="https://cdn.discordapp.com/attachments/1332372537786761278/1370965874835722291/sd.html" class="download">📥 Télécharger</a>
     </div>
 
+    <!-- Carte 2 -->
     <div class="card">
       <img src="https://i.pinimg.com/736x/14/e5/84/14e584760464db3248dd7c57e15d577a.jpg" alt="Clone Youtube" />
       <div class="project-title">Clone Youtube</div>
@@ -187,6 +189,7 @@
       <a href="https://cdn.discordapp.com/attachments/1332372537786761278/1370965905852465263/Youtube-Clone-main.zip" class="download">📥 Télécharger</a>
     </div>
 
+    <!-- Carte 3 -->
     <div class="card">
       <img src="https://i.pinimg.com/736x/c6/2a/a0/c62aa01b94dd75d326abd8ee2fe4867a.jpg" alt="DISCORD ACCEUILLE" />
       <div class="project-title">Discord 1</div>
@@ -194,6 +197,7 @@
       <a href="https://cdn.discordapp.com/attachments/1332372537786761278/1371115499349610516/acceuil_discord.rar" class="download">📥 Télécharger</a>
     </div>
 
+    <!-- Carte 4 -->
     <div class="card">
       <img src="https://i.pinimg.com/736x/c6/2a/a0/c62aa01b94dd75d326abd8ee2fe4867a.jpg" alt="Discord 2" />
       <div class="project-title">Discord 2</div>
@@ -201,21 +205,24 @@
       <a href="https://cdn.discordapp.com/attachments/1332372537786761278/1371118578518065173/main_discord.rar" class="download">📥 Télécharger</a>
     </div>
 
+    <!-- Carte 5 -->
     <div class="card">
-      <img src="https://ph-files.imgix.net/e0b67080-ce61-41ef-aa42-e0724fda0266.png" alt="Pornhub" />
+      <img src="https://ph-files.imgix.net/e0b67080-ce61-41ef-aa42-e0724fda0266.png?auto=compress&codec=mozjpeg&cs=strip&auto=format&w=64&h=64&fit=crop&frame=1&dpr=1" alt="Pornhub" />
       <div class="project-title">Pornhub</div>
       <div class="desc">Pornhub src</div>
       <a href="https://cdn.discordapp.com/attachments/1332372537786761278/1371123558033526834/pornhub-src-by512.rar" class="download">📥 Télécharger</a>
     </div>
   </main>
 
+
+
   <a href="https://discord.gg/wJysWgtaXZ" target="_blank" class="discord-button">Join discord server</a>
 
   <script>
-    const audio = document.getElementById("background-music");
     const playPauseBtn = document.getElementById("playPauseBtn");
     const reloadBtn = document.getElementById("reloadBtn");
     const volumeControl = document.getElementById("volumeControl");
+    const audio = document.getElementById("background-music");
 
     playPauseBtn.addEventListener("click", () => {
       if (audio.paused) {
@@ -227,44 +234,36 @@
       }
     });
 
-    reloadBtn.addEventListener("click", () => {
-      audio.load();
-      audio.play();
-      playPauseBtn.textContent = "❚❚";
-    });
-
     volumeControl.addEventListener("input", () => {
       audio.volume = volumeControl.value / 100;
     });
 
     audio.volume = volumeControl.value / 100;
 
-    // Forcer lecture après clic utilisateur
-    window.addEventListener("DOMContentLoaded", () => {
-      function playAfterClick() {
-        audio.play().catch(() => {});
-        playPauseBtn.textContent = "❚❚";
-        document.removeEventListener("click", playAfterClick);
-      }
-      document.addEventListener("click", playAfterClick);
+    reloadBtn.addEventListener("click", () => {
+      audio.load();
+      audio.play();
+      playPauseBtn.textContent = "❚❚";
     });
 
-    // Anti-inspect
-    document.addEventListener("contextmenu", e => e.preventDefault());
-    document.addEventListener("keydown", e => {
+    // Désactivation DevTools
+    document.addEventListener("contextmenu", event => event.preventDefault());
+    document.addEventListener("keydown", event => {
       if (
-        e.key === "F12" ||
-        (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) ||
-        (e.ctrlKey && e.key === "U")
+        event.key === "F12" ||
+        (event.ctrlKey && event.shiftKey && (event.key === "I" || event.key === "J")) ||
+        (event.ctrlKey && event.key === "U")
       ) {
-        e.preventDefault();
+        event.preventDefault();
       }
     });
     window.onkeydown = e => {
       if (e.keyCode === 123) e.preventDefault();
     };
-    window.addEventListener("mousedown", e => {
-      if (e.button === 2) e.preventDefault();
+    window.addEventListener("mousedown", function(event) {
+      if (event.button === 2) {
+        event.preventDefault();
+      }
     });
   </script>
 
