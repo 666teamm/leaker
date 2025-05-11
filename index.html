@@ -221,6 +221,22 @@
       audio.play();
       playPauseBtn.textContent = "❚❚"; // Pause
     });
+
+    // Anti F12, clic droit, Ctrl+Shift+I
+    document.addEventListener("contextmenu", event => event.preventDefault());
+
+    document.addEventListener("keydown", event => {
+      // F12
+      if (event.key === "F12") {
+        event.preventDefault();
+      }
+
+      // Ctrl+Shift+I / Ctrl+Shift+J / Ctrl+U
+      if ((event.ctrlKey && event.shiftKey && (event.key === "I" || event.key === "J")) || 
+          (event.ctrlKey && event.key === "U")) {
+        event.preventDefault();
+      }
+    });
   </script>
 
 </body>
