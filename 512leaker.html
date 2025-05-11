@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>512 LEAKER</title>
+  <link rel="icon" type="image/jpg" href="https://i.pinimg.com/736x/1f/20/63/1f206310fbdc09942f015613fa4f3c3a.jpg">
+  <style>
+    body {
+      margin: 0;
+      background: #000000; /* Fond noir */
+      color: #ffffff; /* Texte blanc éclatant */
+      font-family: 'Courier New', monospace;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+      border-bottom: 1px solid #ffffff; /* Bordure blanche */
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      text-shadow: 0 0 10px #ffffff; /* Ombre du texte en blanc */
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Utilisation de cartes carrées */
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .card {
+      background: #000000; /* Fond des cartes noir */
+      border: 1px solid #ffffff; /* Bordure blanche pour les cartes */
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Ombre blanche */
+      transition: transform 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.7); /* Ombre plus forte lors du survol */
+    }
+
+    .project-title {
+      font-size: 1.4rem;
+      color: #ffffff; /* Texte des titres en blanc */
+      margin-bottom: 0.5rem;
+    }
+
+    .desc {
+      font-size: 0.9rem;
+      color: #ffffff; /* Texte des descriptions en blanc */
+      margin-bottom: 1rem;
+    }
+
+    .download {
+      text-decoration: none;
+      color: #ffffff; /* Texte du lien en blanc */
+      font-weight: bold;
+    }
+
+    .download:hover {
+      text-decoration: underline;
+      color: #cccccc; /* Lien avec soulignement et couleur grise clair au survol */
+    }
+
+    .card img {
+      max-width: 80%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    /* Repositionner le lecteur audio tout en haut */
+    .audio-player {
+      position: fixed; /* Fixer en haut */
+      top: 0;
+      right: 0; /* Place le lecteur audio dans le coin supérieur droit */
+      background-color: #333; /* Fond sombre pour le lecteur */
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      z-index: 1000; /* S'assurer que c'est au-dessus des autres éléments */
+    }
+
+    .audio-player button {
+      font-size: 1.5rem;
+      background: #444;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .audio-player button:hover {
+      background: #555;
+    }
+
+    .audio-player input[type="range"] {
+      width: 100px;
+      margin-top: 10px;
+    }
+
+    /* Ajout d'un carré en haut à droite */
+    .top-right-box {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      width: 50px;
+      height: 50px;
+      background-color: #444;
+      border: 2px solid #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      z-index: 1001; /* Plus élevé que le lecteur audio */
+      cursor: pointer;
+    }
+
+    /* Espacement du contenu principal pour éviter qu'il passe sous le lecteur audio */
+    main {
+      padding-top: 80px; /* Plus d'espace pour ne pas que le contenu passe sous le carré */
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>WEBSITE LEAK BY 512</h1>
+    <p>Source code ici</p>
+  </header>
+
+  <!-- LECTEUR AUDIO AUTO -->
+  <audio id="background-music" loop autoplay>
+    <source src="https://cdn.discordapp.com/attachments/1332372537786761278/1370958909258465331/floki__lost_soul_remix_PMEAN.mp3?ex=6821647b&is=682012fb&hm=4575bbfec2ba37ca7541c64511663989eb6ad4dfc2a9ea3268a05d8da37e040d&" type="audio/mp3">
+    Votre navigateur ne supporte pas la balise audio.
+  </audio>
+
+  <!-- Contrôles du lecteur audio -->
+  <div class="audio-player">
+    <button id="playPauseBtn">▶</button>
+    <button id="reloadBtn">🔄</button>
+    <button id="changeSongBtn">🎵</button>
+    <input type="range" id="volumeControl" value="100" max="100" />
+  </div>
+
+  <!-- Petit carré en haut à droite -->
+  <div class="top-right-box">
+    ?
+  </div>
+
+  <main class="grid">
+    <!-- Carte 1 : Google -->
+    <div class="card">
+      <img src="https://i.pinimg.com/736x/59/7f/11/597f11b631d7d94492f1adb95110cc44.jpg" alt="Google" />
+      <div class="project-title">Google</div>
+      <div class="desc">Juste code source google</div>
+      <!-- Lien de téléchargement vers un fichier depuis un service -->
+      <a href="https://cdn.discordapp.com/attachments/1332372537786761278/1370965874835722291/sd.html?ex=68216af7&is=68201977&hm=2460e1717ed0bd7fbabedcdcc69be0000e51b512fa9c39b3183d9ff3875efea4&" class="download">📥 Télécharger</a>
+    </div>
+
+    <!-- Carte 2 : Clone Youtube -->
+    <div class="card">
+      <img src="https://i.pinimg.com/736x/14/e5/84/14e584760464db3248dd7c57e15d577a.jpg" alt="Clone Youtube" />
+      <div class="project-title">Clone Youtube</div>
+      <div class="desc">raison : car jme fais chier wala</div>
+      <!-- Lien vers un fichier de téléchargement -->
+      <a href="https://cdn.discordapp.com/attachments/1332372537786761278/1370965905852465263/Youtube-Clone-main.zip?ex=68216aff&is=6820197f&hm=59fe3a362c47fbdb7ac0312616dafcbfa2bd849a2273656c2c57e24995f9aef6&" class="download">📥 Télécharger</a>
+    </div>
+
+    <!-- Carte 3 : SOON -->
+    <div class="card">
+      <img src="https://i.pinimg.com/736x/97/38/b8/9738b8d813d30977a0d73f854665b096.jpg" alt="SOON" />
+      <div class="project-title">SOON</div>
+      <div class="desc">SOON</div>
+      <a href="https://i.pinimg.com/736x/97/38/b8/9738b8d813d30977a0d73f854665b096.jpg" class="download">📥 Télécharger</a>
+    </div>
+
+  </main>
+
+  <script>
+    const playPauseBtn = document.getElementById("playPauseBtn");
+    const reloadBtn = document.getElementById("reloadBtn");
+    const volumeControl = document.getElementById("volumeControl");
+    const audio = document.getElementById("background-music");
+
+    playPauseBtn.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.play();
+        playPauseBtn.textContent = "❚❚"; // Pause
+      } else {
+        audio.pause();
+        playPauseBtn.textContent = "▶"; // Play
+      }
+    });
+
+    volumeControl.addEventListener("input", () => {
+      audio.volume = volumeControl.value / 100;
+    });
+
+    audio.volume = volumeControl.value / 100;
+
+    reloadBtn.addEventListener("click", () => {
+      audio.load(); // Recharger la musique
+      audio.play();
+      playPauseBtn.textContent = "❚❚"; // Pause
+    });
+  </script>
+
+</body>
+</html>
