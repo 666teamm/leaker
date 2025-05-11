@@ -222,18 +222,31 @@
       playPauseBtn.textContent = "❚❚"; // Pause
     });
 
-    // Anti F12, clic droit, Ctrl+Shift+I
+    // Désactiver le clic droit
     document.addEventListener("contextmenu", event => event.preventDefault());
 
+    // Désactiver F12, Ctrl+Shift+I, Ctrl+U
     document.addEventListener("keydown", event => {
-      // F12
       if (event.key === "F12") {
         event.preventDefault();
       }
 
-      // Ctrl+Shift+I / Ctrl+Shift+J / Ctrl+U
       if ((event.ctrlKey && event.shiftKey && (event.key === "I" || event.key === "J")) || 
           (event.ctrlKey && event.key === "U")) {
+        event.preventDefault();
+      }
+    });
+
+    // Désactiver l'ouverture des DevTools via la souris
+    window.onkeydown = (e) => {
+      if (e.keyCode === 123) { // F12
+        e.preventDefault();
+      }
+    };
+
+    // Désactiver l'inspection via la souris
+    window.addEventListener('mousedown', function(event) {
+      if (event.button === 2) {
         event.preventDefault();
       }
     });
